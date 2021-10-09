@@ -11,11 +11,12 @@ Again, this project is still in development and unfinished - I'll try to push up
 - Inventory menu framework
 - Command framework
 - Ranks & punishments
+- Redis & Mongo interface
 - Common utility classes
 
 Some of that stuff is still unfinished and more features will be added.
 
 ### Information
 - Lombok is used to avoid the code from being messed up due to too many getters and setters
-- Database: MongoDB - I usually make use of SQL so I was kinda new to it
+- Mongo is used as the main database, please note that I'm more familiar with SQL databases
 - Documentation is retarded but idiot-proof

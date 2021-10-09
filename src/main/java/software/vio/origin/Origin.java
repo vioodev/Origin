@@ -7,7 +7,6 @@ import software.vio.origin.command.impl.PunishCommand;
 import software.vio.origin.command.impl.SettingsCommand;
 import software.vio.origin.command.impl.StaffModeCommand;
 import software.vio.origin.database.mongo.MongoService;
-import software.vio.origin.database.redis.RedisExample;
 import software.vio.origin.database.redis.RedisService;
 import software.vio.origin.menu.MenuListener;
 import software.vio.origin.menu.button.ButtonListener;
@@ -15,6 +14,7 @@ import software.vio.origin.user.UserData;
 import software.vio.origin.user.UserListener;
 import software.vio.origin.user.UserManager;
 import software.vio.origin.util.CC;
+import software.vio.origin.util.JsonBuilder;
 import software.vio.origin.util.Msg;
 import software.vio.origin.util.ServerUtil;
 
@@ -41,9 +41,12 @@ public class Origin extends JavaPlugin {
         this.loadManagers();
         this.loadServices();
 
-        new RedisExample(this.redisService);
-
         Msg.log(CC.GOLD + "Origin " + CC.YELLOW + "has been enabled.");
+
+        // Temporary redis implementation
+        this.redisService.send("example", new JsonBuilder()
+                .add("message", "Hello World!")
+                .get());
     }
 
     @Override

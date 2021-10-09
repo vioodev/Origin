@@ -11,6 +11,6 @@ public class ExampleSubscriber extends RedisSubscriber {
 
     @Override
     public void onMessage(RedisMessage message) {
-        System.out.println(message.getObject().get("subject").getAsString());
+        System.out.println(message.getObject().get("message").getAsString());
     }
 }
