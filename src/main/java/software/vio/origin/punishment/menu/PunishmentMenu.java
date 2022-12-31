@@ -6,7 +6,7 @@ import software.vio.origin.menu.Menu;
 import software.vio.origin.menu.button.Button;
 import software.vio.origin.menu.button.event.ButtonClickEvent;
 import software.vio.origin.util.CC;
-import software.vio.origin.util.item.ItemCreator;
+import software.vio.origin.util.item.ItemBuilder;
 
 public class PunishmentMenu extends Menu {
 
@@ -20,7 +20,7 @@ public class PunishmentMenu extends Menu {
 
     @Override
     protected void setup() {
-        this.set(10, new Button(new ItemCreator(Material.BOOK)
+        this.set(10, new Button(new ItemBuilder(Material.BOOK)
                 .setName(CC.GOLD + "Mute")
                 .setLore("",
                         CC.GRAY + "Limited chat access.",
@@ -32,7 +32,7 @@ public class PunishmentMenu extends Menu {
                 new MuteMenu(event.getPlayer(), target).open();
             }
         });
-        this.set(12, new Button(new ItemCreator(Material.BOOK_AND_QUILL)
+        this.set(12, new Button(new ItemBuilder(Material.BOOK_AND_QUILL)
                 .setName(CC.GOLD + "Kick")
                 .setLore("",
                         CC.GRAY + "One-time disconnect.",
@@ -44,7 +44,7 @@ public class PunishmentMenu extends Menu {
                 new KickMenu(event.getPlayer(), target).open();
             }
         });
-        this.set(14, new Button(new ItemCreator(Material.ENCHANTED_BOOK)
+        this.set(14, new Button(new ItemBuilder(Material.ENCHANTED_BOOK)
                 .setName(CC.GOLD + "Ban")
                 .setLore("",
                         CC.GRAY + "Temporary or permanent suspension.",
@@ -56,7 +56,7 @@ public class PunishmentMenu extends Menu {
                 new BanMenu(event.getPlayer(), target).open();
             }
         });
-        this.set(16, new Button(new ItemCreator(Material.BOOKSHELF)
+        this.set(16, new Button(new ItemBuilder(Material.BOOKSHELF)
                 .setName(CC.GOLD + "Blacklist")
                 .setLore("",
                         CC.GRAY + "Permanent and un-appealable suspension.",

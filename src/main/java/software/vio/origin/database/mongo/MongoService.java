@@ -45,9 +45,9 @@ public class MongoService {
             this.users = this.database.getCollection("users");
             this.punishments = this.database.getCollection("punishments");
 
-            Msg.log(CC.GOLD + "Origin " + CC.YELLOW + "successfully established a connection to the database.");
+            Msg.log(CC.GREEN + "Origin successfully established a connection to the database.");
         } catch (Exception e) {
-            Msg.log(CC.GOLD + "Origin " + CC.YELLOW + "failed to establish a connection to the database. Reason: " + CC.GOLD + e.getMessage());
+            Msg.log(CC.RED + "Origin failed to establish a connection to the database. Reason: " + e.getMessage());
         }
     }
     

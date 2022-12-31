@@ -17,15 +17,6 @@ public class Clickable {
     private ClickEvent.Action clickAction;
     private TextComponent textComponent;
 
-    /**
-     * Create a new clickable message
-     *
-     * @param message     Chat message to send
-     * @param hoverText   Text displayed upon hovering above the chat message
-     * @param clickAction Action that is performed upon clicking on the chat message
-     * @param clickString String that is dealt with upon clicking on the chat message -> Can be a command, url & more
-     */
-
     public Clickable(String message, String hoverText, ClickEvent.Action clickAction, String clickString) {
         this.message = message;
         this.hoverText = hoverText;
@@ -89,19 +80,9 @@ public class Clickable {
         return this;
     }
 
-    /**
-     * Send the clickable message to a player
-     *
-     * @param player Player to send to
-     */
-
     public void send(Player player) {
         player.spigot().sendMessage(this.textComponent);
     }
-
-    /**
-     * Send the clickable message to everyone
-     */
 
     public void broadcast() {
         Bukkit.getOnlinePlayers().forEach(online -> online.spigot().sendMessage(this.textComponent));

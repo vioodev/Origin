@@ -8,7 +8,7 @@ import software.vio.origin.menu.button.event.ButtonClickEvent;
 import software.vio.origin.rank.Rank;
 import software.vio.origin.util.CC;
 import software.vio.origin.util.UserUtil;
-import software.vio.origin.util.item.ItemCreator;
+import software.vio.origin.util.item.ItemBuilder;
 
 public class SettingsMenu extends Menu {
 
@@ -21,7 +21,7 @@ public class SettingsMenu extends Menu {
         if (!UserUtil.checkRank(this.getViewer(), Rank.TRAINEE)) return;
 
         // Staff settings
-        this.set(4, new Button(new ItemCreator(Material.NETHER_STAR)
+        this.set(4, new Button(new ItemBuilder(Material.NETHER_STAR)
                 .setName(CC.GOLD + "Staff Mode")
                 .setLore("",
                         CC.GRAY + "Improves your staffing experience.",

@@ -10,7 +10,7 @@ import software.vio.origin.punishment.PunishmentType;
 import software.vio.origin.punishment.reason.BanReason;
 import software.vio.origin.util.CC;
 import software.vio.origin.util.TimeUtil;
-import software.vio.origin.util.item.ItemCreator;
+import software.vio.origin.util.item.ItemBuilder;
 
 public class BanMenu extends Menu {
 
@@ -30,10 +30,10 @@ public class BanMenu extends Menu {
         punishment.setTarget(this.toPunish.getUniqueId());
         punishment.setSender(this.getViewer().getUniqueId());
 
-        this.surround(new ItemCreator(Menu.FILL_ITEM).get());
+        this.surround(new ItemBuilder(Menu.FILL_ITEM).get());
 
         for (BanReason reason : BanReason.values()) {
-            this.add(new Button(new ItemCreator(Material.PAPER)
+            this.add(new Button(new ItemBuilder(Material.PAPER)
                     .setName(CC.GOLD + reason.getName())
                     .setLore("",
                             CC.GRAY + "Duration: " + CC.WHITE + TimeUtil.getPrettyTime(reason.getDuration()),

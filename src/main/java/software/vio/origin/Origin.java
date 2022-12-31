@@ -41,7 +41,7 @@ public class Origin extends JavaPlugin {
         this.loadManagers();
         this.loadServices();
 
-        Msg.log(CC.GOLD + "Origin " + CC.YELLOW + "has been enabled.");
+        Msg.log(CC.GREEN + "Origin has been enabled.");
 
         // Temporary redis implementation
         this.redisService.send("example", new JsonBuilder()
@@ -59,7 +59,7 @@ public class Origin extends JavaPlugin {
 
         instance = null;
 
-        Msg.log(CC.GOLD + "Origin " + CC.YELLOW + "has been disabled.");
+        Msg.log(CC.RED + "Origin has been disabled.");
     }
 
     private void loadCommands() {

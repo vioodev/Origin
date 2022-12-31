@@ -25,7 +25,7 @@ public class RedisListener extends JedisPubSub {
 
             this.service.getSubscribers().get(payload).onMessage(new RedisMessage(payload, object));
         } catch (JsonParseException e) {
-            Msg.log(CC.GOLD + "Origin " + CC.YELLOW + "has failed to parse a redis message with payload " + CC.GOLD + payload + CC.YELLOW + ". Reason: " + CC.GOLD + e.getMessage());
+            Msg.log(CC.RED + "Origin has failed to parse a redis message with payload " + payload + ". Reason: " + e.getMessage());
         }
     }
 }

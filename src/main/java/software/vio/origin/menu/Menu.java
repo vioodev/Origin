@@ -8,7 +8,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import software.vio.origin.menu.button.Button;
 import software.vio.origin.util.MathUtil;
-import software.vio.origin.util.item.ItemCreator;
+import software.vio.origin.util.item.ItemBuilder;
 import software.vio.origin.util.task.TaskUtil;
 
 import java.util.HashMap;
@@ -22,7 +22,7 @@ import java.util.stream.IntStream;
 @Getter
 public abstract class Menu {
 
-    public static final ItemStack FILL_ITEM = new ItemCreator(Material.STAINED_GLASS_PANE).setName(" ").setDurability(7).get();
+    public static final ItemStack FILL_ITEM = new ItemBuilder(Material.STAINED_GLASS_PANE).setName(" ").setDurability(7).get();
     // Menus are per-player inventories - storing the UUID of the player alongside the menu
     private static final Map<UUID, Menu> menus = new HashMap<>();
     private final Player viewer;

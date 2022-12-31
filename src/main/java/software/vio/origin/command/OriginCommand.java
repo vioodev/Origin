@@ -15,22 +15,12 @@ public abstract class OriginCommand extends BukkitCommand {
     private boolean playersOnly;
     private Rank rank;
 
-    // Multiple constructors for different usages
-
-    /**
-     * @param name Command name when performing with /<commandName>
-     */
-
     public OriginCommand(String name) {
         super(name);
 
         this.rank = Rank.DEFAULT;
         this.playersOnly = false;
     }
-
-    /**
-     * @param aliases Possible command aliases (/<alias1>, /<alias2>, ...)
-     */
 
     public OriginCommand(String name, List<String> aliases) {
         this(name);
@@ -40,20 +30,12 @@ public abstract class OriginCommand extends BukkitCommand {
         this.playersOnly = false;
     }
 
-    /**
-     * @param playersOnly Limit command access to players only
-     */
-
     public OriginCommand(String name, boolean playersOnly) {
         this(name);
 
         this.rank = Rank.DEFAULT;
         this.playersOnly = playersOnly;
     }
-
-    /**
-     * @param rank Limit command to players with a certain minimum rank
-     */
 
     public OriginCommand(String name, Rank rank) {
         this(name);
